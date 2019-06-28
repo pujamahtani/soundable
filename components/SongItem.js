@@ -23,19 +23,22 @@ export default class SongItem extends Component{
 
    render(){
         return(
-          <View style={styles.mainContainer}>
+            <TouchableOpacity style={styles.mainContainer} onPress={()=> this.props.songClicked(this.props.song)} >
+                
                 <View style={GlobalStyles.styles.songContainer}>
                     <Image
                         source={{uri:this.props.song.thumbnail}}
                         style={GlobalStyles.styles.albumArt}
                     />
                     <View style={GlobalStyles.styles.infoContainer}>
-                        <Text style={GlobalStyles.styles.songTitle}>{this.props.song.title}</Text>
+                        <Text style={(this.props.isActive) ? [GlobalStyles.styles.songTitle,{color:Colors.accentColor}] : [GlobalStyles.styles.songTitle,{color:Colors.headingColor}]}>{this.props.song.title}</Text>
                         <Text style={GlobalStyles.styles.albumText}>{this.props.song.album}</Text>
                     </View>
                 </View>
-              <Text style={styles.durationText}>{this.props.song.duration}</Text>
-          </View>
+            <Text style={styles.durationText}>{this.props.song.duration}</Text>
+        
+            </TouchableOpacity>
+          
         );
    }
 }
