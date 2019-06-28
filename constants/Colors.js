@@ -22,4 +22,5 @@ primaryColor: '#191B2F',
   primaryGradientStart:'#1E2542',
   primaryGradientEnd:'#16162C',
   headingColor:'#fff',
+  greyColor:'#CCCCCC'
 };
